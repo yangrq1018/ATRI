@@ -45,6 +45,16 @@ class GeoIP(BaseModel):
     license_key: str
 
 
+class Emby(BaseModel):
+    emby_key: str
+
+
+class SourceMod(BaseModel):
+    host: str
+    port: int = 27015
+    password: str
+
+
 class ConfigModel(BaseModel):
     ConfigVersion: str
     BotConfig: BotConfig
@@ -52,6 +62,8 @@ class ConfigModel(BaseModel):
     SauceNAO: SauceNAO
     Setu: Setu
     GeoIP: GeoIP
+    Emby: Emby
+    SourceMod: SourceMod
 
 
 class RuntimeConfig(BaseModel):

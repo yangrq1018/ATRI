@@ -37,3 +37,11 @@ Setu:
 GeoIP:
   account_id:
   license_key:
+
+ManageGo:
+  emby_key: "344d021a79684a4a8bd7ae5966058387"
+
+SourceMod:
+  host:
+  port:
+  password:
