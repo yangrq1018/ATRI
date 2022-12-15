@@ -26,7 +26,7 @@ async def _(bot: Bot, event: MessageEvent, index: str = ArgStr("index")):
         index = random.randrange(0, len(pieces))
     else:
         try:
-            index = int(index)
+            index = int(index) + 1
         except ValueError:
             await query_account.reject("请输入数字!")
 

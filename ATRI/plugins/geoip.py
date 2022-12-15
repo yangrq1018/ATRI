@@ -1,6 +1,7 @@
 from nonebot.params import ArgStr
 import geoip2.webservice
 from ATRI.service import Service
+from ATRI.message import MessageBuilder
 from ATRI import conf
 
 
@@ -25,9 +26,10 @@ async def _(ip_address: str = ArgStr()):
         subdivision = ""
         if subs := response.subdivisions:
             subdivision = subs[0].names[LANG]
-        await query_geoip.finish(
-            f"IP: {ip_address}\n"
-            f"{country}{subdivision}{city}\n"
-            f"运营商{org}\n"
-            f"网段{network}"
+        msg = (
+            MessageBuilder(f"IP:{ip_address}")
+            .text(f"地理位置: {country}{subdivision}{city}")
+            .text(f"运营商: {org}")
+            .text(f"网段: {network}")
         )
+        await query_geoip.finish(msg)
