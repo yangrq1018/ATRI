@@ -39,7 +39,7 @@ class LoguruNameDealer:
 log.remove()
 log.add(
     sys.stdout,
-    level="DEBUG" if conf.BotConfig.debug else "INFO",
+    level="DEBUG" if conf.BotConfig.debug else conf.BotConfig.log_level,
     colorize=True,
     filter=LoguruNameDealer(),
     format=_LOG_FORMAT,

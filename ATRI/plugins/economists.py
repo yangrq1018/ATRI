@@ -18,7 +18,7 @@ session = requests.session()
 
 def list_repo_path(repo, path):
     session.headers.update(
-        {"Authorization": "Bearer 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"}
+        {"Authorization": conf.Economists.github_token}
     )
     res = session.get(url.format(repo=repo, path=path))
     if res.status_code != 200:

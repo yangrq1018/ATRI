@@ -47,6 +47,7 @@ class Helper:
             MessageBuilder("唔...是来认识咱的么")
             .text(f"可以称呼咱：{nickname}")
             .text(f"咱的型号是：{__version__}")
+            .text("咱的头像是@西西画的")
             .text("想进一步了解:")
             .text("atri.imki.moe")
             .text("进不去: project-atri-docs.vercel.app")

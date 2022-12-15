@@ -6,6 +6,7 @@ class BotConfig(BaseModel):
     host: str
     port: int
     debug: bool
+    log_level: str = "INFO"
     superusers: set
     nickname: set
     command_start: set
@@ -55,6 +56,10 @@ class SourceMod(BaseModel):
     password: str
 
 
+class Economists(BaseModel):
+    github_token: str
+
+
 class ConfigModel(BaseModel):
     ConfigVersion: str
     BotConfig: BotConfig
@@ -64,6 +69,7 @@ class ConfigModel(BaseModel):
     GeoIP: GeoIP
     Emby: Emby
     SourceMod: SourceMod
+    Economists: Economists
 
 
 class RuntimeConfig(BaseModel):

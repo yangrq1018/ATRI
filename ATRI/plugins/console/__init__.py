@@ -107,5 +107,5 @@ from .data_source import init_resource
 from .driver import init_driver
 
 
-dr().on_startup(init_resource)
+# dr().on_startup(init_resource)
 dr().on_startup(init_driver)
